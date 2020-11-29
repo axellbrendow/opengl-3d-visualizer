@@ -290,10 +290,18 @@ public slots:
 
 https://www.loom.com/share/b7cdca4ae2854b11acb925eec2ceb501
 
+## Socket Gouraud Shader
+
 <img src="./socket.jpeg" alt="Socket model"/>
+
+## Cube Gouraud Shader
 
 <img src="./cube-gouraud.png" alt="Cube with Gouraud shader"/>
 
+## Cube Phong Shader
+
 <img src="./cube-phong.png" alt="Cube with Phong shader"/>
+
+## Mushroom Gouraud Shader
 
 <img src="./mushroom-gouraud.png" alt="Mushroom with Gouraud shader"/>
