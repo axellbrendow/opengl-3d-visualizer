@@ -21,8 +21,8 @@ make
 ./openglvisualization
 ```
 
-Maybe you can find qmake in Linux through this command `sudo find / -name "qmake" -type f`
+Maybe you can find qmake on Linux through this command `sudo find / -name "qmake" -type f`
 
 In my case, qmake is at `$HOME/Qt/5.15.2/gcc_64/bin/qmake`
 
-You will use the same commands on Windows. To find qmake on Windows, go to your Qt installation folder and run `dir /s qmake.exe` or `dir /s qmake` for CMD and `ls -r qmake` or `ls -r qmake.exe` for PowerShell
+You will use the same commands on Windows. To find qmake on Windows, go to your Qt installation folder and run `dir /s qmake.exe` or `dir /s qmake` for CMD or `ls -r qmake` or `ls -r qmake.exe` for PowerShell
