@@ -557,7 +557,7 @@ void GLWidget::showOpenFileDialog()
     QString fileName = QFileDialog::getOpenFileName(
         this,
         "Open File",
-        ".",
+        "../opengl-3d-visualizer/off",
         QString("OFF Files (*.off)"),
         nullptr,
         QFileDialog::DontUseNativeDialog
