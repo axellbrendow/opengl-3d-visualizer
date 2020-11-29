@@ -31,13 +31,14 @@ GLWidget::~GLWidget()
 
 void GLWidget::initializeGL()
 {
-    glEnable ( GL_DEPTH_TEST );
+    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
+    glFuncs.glEnable ( GL_DEPTH_TEST );
 
     QImage texColor = QImage (":/assets/textures/bricksDiffuse.png");
     QImage texNormal = QImage (":/assets/textures/bricksNormal.png");
-    glActiveTexture ( GL_TEXTURE0 );
+    glFuncs.glActiveTexture ( GL_TEXTURE0 );
     texID [0] = bindTexture ( texColor );
-    glActiveTexture ( GL_TEXTURE1 );
+    glFuncs.glActiveTexture ( GL_TEXTURE1 );
     texID [1] = bindTexture ( texNormal );
 
     connect (& timer , SIGNAL ( timeout () ) , this , SLOT ( animate () ));
@@ -46,7 +47,8 @@ void GLWidget::initializeGL()
 
 void GLWidget::resizeGL(int width, int height)
 {
-    glViewport(0, 0, width , height);
+    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
+    glFuncs.glViewport(0, 0, width , height);
     projectionMatrix.setToIdentity ();
     projectionMatrix.perspective(
         60.0,
@@ -62,7 +64,8 @@ void GLWidget::resizeGL(int width, int height)
 
 void GLWidget::paintGL()
 {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
+    glFuncs.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     if (!vboVertices)
         return;
@@ -90,10 +93,10 @@ void GLWidget::paintGL()
     shaderProgram ->setUniformValue("texColorMap", 0);
     shaderProgram ->setUniformValue("texNormalMap", 1);
 
-    glActiveTexture ( GL_TEXTURE0 );
-    glBindTexture ( GL_TEXTURE_2D , texID [0]) ;
-    glActiveTexture ( GL_TEXTURE1 );
-    glBindTexture ( GL_TEXTURE_2D , texID [1]) ;
+    glFuncs.glActiveTexture ( GL_TEXTURE0 );
+    glFuncs.glBindTexture ( GL_TEXTURE_2D , texID [0]) ;
+    glFuncs.glActiveTexture ( GL_TEXTURE1 );
+    glFuncs.glBindTexture ( GL_TEXTURE_2D , texID [1]) ;
 
     vboVertices ->bind();
     shaderProgram ->enableAttributeArray("vPosition");
@@ -109,7 +112,7 @@ void GLWidget::paintGL()
     shaderProgram ->setAttributeBuffer("vTangent", GL_FLOAT ,0, 4, 0);
     vboIndices ->bind ();
 
-    glDrawElements(GL_TRIANGLES , numFaces * 3, GL_UNSIGNED_INT , 0);
+    glFuncs.glDrawElements(GL_TRIANGLES , numFaces * 3, GL_UNSIGNED_INT , 0);
 
     vboIndices ->release ();
     vboTangents ->release ();
@@ -126,15 +129,16 @@ void GLWidget :: animate ()
 
 void GLWidget::toggleBackgroundColor()
 {
+    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
     if (bgBlack)
     {
-        glClearColor(1, 1, 1, 1);
+        glFuncs.glClearColor(1, 1, 1, 1);
         bgBlack = false;
     }
 
     else
     {
-        glClearColor(0, 0, 0, 1);
+        glFuncs.glClearColor(0, 0, 0, 1);
         bgBlack = true;
     }
 
