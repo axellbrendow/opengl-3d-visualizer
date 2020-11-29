@@ -292,8 +292,8 @@ https://www.loom.com/share/b7cdca4ae2854b11acb925eec2ceb501
 
 <img src="./socket.jpeg" alt="Socket model"/>
 
-<img src="./cube-gouraud.jpeg" alt="Cube with Gouraud shader"/>
+<img src="./cube-gouraud.png" alt="Cube with Gouraud shader"/>
 
-<img src="./cube-phong.jpeg" alt="Cube with Phong shader"/>
+<img src="./cube-phong.png" alt="Cube with Phong shader"/>
 
-<img src="./mushroom-gouraud.jpeg" alt="Mushroom with Gouraud shader"/>
+<img src="./mushroom-gouraud.png" alt="Mushroom with Gouraud shader"/>
