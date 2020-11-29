@@ -12,6 +12,7 @@ Softwares used in this project:
 - Qt 5.15.2
 - GCC 5.3.1 20160406 (Red Hat 5.3.1-6) 64 bit
 - CMake 3.19.0
+- QMake 3.1
 
 Compiling and running on Linux:
 ```
