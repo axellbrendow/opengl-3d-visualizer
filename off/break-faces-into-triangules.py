@@ -1,6 +1,8 @@
 """
 This script transforms an .off file with faces that have more than 3 vertices
 and break these faces into multiple triangules creating new triangular faces
+
+USAGE: python3 break-faces-into-triangules.py < cone.off > cone-tri.off
 """
 
 import sys
