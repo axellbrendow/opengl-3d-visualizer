@@ -1,6 +1,34 @@
 """
-This script transforms an .off file with faces that have more than 3 vertices
-and break these faces into multiple triangules creating new triangular faces
+This script reads an .off file with faces that have more than 3 vertices
+and breaks them into multiple triangules creating new triangular faces.
+
+As an example, a square would be transformed into 4 triangules.
+
+ABC, ABD, ACD, BCD
+
+A                                        B
+--``````````````````````````````````````--
+` ..                                  .. `
+`   ..                              ..   `
+`     ..                          ..     `
+`       ..                      ..       `
+`         ..                  ..         `
+`           ..              ..           `
+`             ..          ..             `
+`               ..      ..               `
+`                 ..  ..                 `
+`                   ::                   `
+`                 ..  ..                 `
+`               ..      ..               `
+`             ..          ..             `
+`           ..              ..           `
+`         ..                  ..         `
+`       ..                      ..       `
+`     ..                          ..     `
+`   ..                              ..   `
+` ..                                  .. `
+-.``  ``  ``  ``  ```  ``  ``  ``  ``` `.-
+C                                        D
 
 USAGE: python3 break-faces-into-triangules.py < cone.off > cone-tri.off
 """
