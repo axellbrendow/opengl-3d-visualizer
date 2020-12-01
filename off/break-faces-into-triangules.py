@@ -25,10 +25,6 @@ import sys
 
 from itertools import combinations
 
-passedOFF = False
-passedVertexFaceAndEdgeCount = False
-passedVertices = False
-
 numVertices = 0
 numFaces = 0
 numEdges = 0
@@ -63,8 +59,6 @@ if '#' in line:
     line = line[:hastag_index]
 
 # Num. of vertices, faces and edges
-# print(line)
-
 lineSplit = line.split()
 numVertices = int(lineSplit[0])
 numFaces = int(lineSplit[1])
