@@ -212,6 +212,16 @@ private:
     QTimer timer;
 
     /**
+     * @brief Change current shader.
+     * @param shaderIndex
+     */
+    void useShader(int shaderIndex);
+    /**
+     * @brief Change current texture.
+     * @param textureIndex
+     */
+    void useTexture(int textureIndex);
+    /**
      * @brief Read uncolored .off objects with triangular faces.
      * 
      * @param fileName .off filename.
@@ -256,6 +266,15 @@ signals:
 public slots:
     void toggleBackgroundColor();
     void showOpenFileDialog();
+    void useShader0();
+    void useShader1();
+    void useShader2();
+    void useShader3();
+    void useTexture0();
+    void useTexture1();
+    void useTexture2();
+    void useTexture3();
+    void useTexture4();
     void animate();
 };
 

@@ -60,7 +60,28 @@
     <addaction name="actionOpen"/>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuShaders">
+    <property name="title">
+     <string>Shaders</string>
+    </property>
+    <addaction name="actionGouraud"/>
+    <addaction name="actionPhong"/>
+    <addaction name="actionPhong_Texture"/>
+    <addaction name="actionTexture_Normal_Mapping"/>
+   </widget>
+   <widget class="QMenu" name="menuTextures">
+    <property name="title">
+     <string>Textures</string>
+    </property>
+    <addaction name="actionbricksDiffuse"/>
+    <addaction name="actionbricksNormal"/>
+    <addaction name="actionwood"/>
+    <addaction name="actionrocks"/>
+    <addaction name="actionIlluminati_eye"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuShaders"/>
+   <addaction name="menuTextures"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -73,6 +94,51 @@
     <string>Exit</string>
    </property>
   </action>
+  <action name="actionGouraud">
+   <property name="text">
+    <string>Gouraud</string>
+   </property>
+  </action>
+  <action name="actionPhong">
+   <property name="text">
+    <string>Phong</string>
+   </property>
+  </action>
+  <action name="actionPhong_Texture">
+   <property name="text">
+    <string>Phong + Texture</string>
+   </property>
+  </action>
+  <action name="actionTexture_Normal_Mapping">
+   <property name="text">
+    <string>Texture Normal Mapping</string>
+   </property>
+  </action>
+  <action name="actionbricksDiffuse">
+   <property name="text">
+    <string>Bricks diffuse</string>
+   </property>
+  </action>
+  <action name="actionbricksNormal">
+   <property name="text">
+    <string>Bricks normal</string>
+   </property>
+  </action>
+  <action name="actionwood">
+   <property name="text">
+    <string>Wood</string>
+   </property>
+  </action>
+  <action name="actionrocks">
+   <property name="text">
+    <string>Rocks</string>
+   </property>
+  </action>
+  <action name="actionIlluminati_eye">
+   <property name="text">
+    <string>Illuminati eye</string>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
@@ -83,6 +149,15 @@
    <slots>
     <slot>toggleBackgroundColor()</slot>
     <slot>showOpenFileDialog()</slot>
+    <slot>useTexture0()</slot>
+    <slot>useTexture1()</slot>
+    <slot>useTexture2()</slot>
+    <slot>useTexture3()</slot>
+    <slot>useTexture4()</slot>
+    <slot>useShader0()</slot>
+    <slot>useShader1()</slot>
+    <slot>useShader2()</slot>
+    <slot>useShader3()</slot>
    </slots>
   </customwidget>
  </customwidgets>
@@ -149,6 +224,150 @@
     <hint type="destinationlabel">
      <x>367</x>
      <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionbricksDiffuse</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useTexture0()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionbricksNormal</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useTexture1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionwood</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useTexture2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionrocks</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useTexture3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionIlluminati_eye</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useTexture4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGouraud</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useShader0()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPhong</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useShader1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPhong_Texture</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useShader2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTexture_Normal_Mapping</sender>
+   <signal>triggered()</signal>
+   <receiver>glwidget</receiver>
+   <slot>useShader3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>228</y>
     </hint>
    </hints>
   </connection>

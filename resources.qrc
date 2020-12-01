@@ -10,5 +10,8 @@
         <file>shaders/fnormal.glsl</file>
         <file>textures/bricksNormal.png</file>
         <file>textures/bricksDiffuse.png</file>
+        <file>textures/rocks.jpg</file>
+        <file>textures/wood.jpeg</file>
+        <file>textures/illuminati-eye.jpg</file>
     </qresource>
 </RCC>

@@ -1,6 +1,6 @@
 #include "glwidget.h"
 
-GLWidget::GLWidget(QWidget *parent) : QGLWidget(parent), bgBlack(true)
+GLWidget::GLWidget(QWidget *parent) : QGLWidget(parent)
 {
     vertices = NULL;
     normals = NULL;
@@ -19,6 +19,7 @@ GLWidget::GLWidget(QWidget *parent) : QGLWidget(parent), bgBlack(true)
     fragmentShader = NULL;
     currentShader = 0;
 
+    bgBlack = true;
     zoom = 0.0;
     fpsCounter = 0;
 }
@@ -31,16 +32,8 @@ GLWidget::~GLWidget()
 
 void GLWidget::initializeGL()
 {
-    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
-    glFuncs.glEnable ( GL_DEPTH_TEST );
-
-    QImage texColor = QImage (":/assets/textures/bricksDiffuse.png");
-    QImage texNormal = QImage (":/assets/textures/bricksNormal.png");
-    glFuncs.glActiveTexture ( GL_TEXTURE0 );
-    texID [0] = bindTexture ( texColor );
-    glFuncs.glActiveTexture ( GL_TEXTURE1 );
-    texID [1] = bindTexture ( texNormal );
-
+    useTexture(0);
+    useShader(0);
     connect (& timer , SIGNAL ( timeout () ) , this , SLOT ( animate () ));
     timer.start (0) ;
 }
@@ -142,6 +135,34 @@ void GLWidget::toggleBackgroundColor()
         bgBlack = true;
     }
 
+    updateGL();
+}
+
+void GLWidget::useTexture(int textureIndex)
+{
+    QOpenGLFunctions glFuncs(QOpenGLContext::currentContext());
+    glFuncs.glEnable ( GL_DEPTH_TEST );
+
+    QString textures[] = {
+        ":/assets/textures/bricksDiffuse.png",
+        ":/assets/textures/bricksNormal.png",
+        ":/assets/textures/wood.jpeg",
+        ":/assets/textures/rocks.jpg",
+        ":/assets/textures/illuminati-eye.jpg"
+    };
+
+    QImage texColor = QImage (textures[textureIndex]);
+    QImage texNormal = QImage (textures[textureIndex]);
+    glFuncs.glActiveTexture ( GL_TEXTURE0 );
+    texID [0] = bindTexture ( texColor );
+    glFuncs.glActiveTexture ( GL_TEXTURE1 );
+    texID [1] = bindTexture ( texNormal );
+}
+
+void GLWidget::useShader(int shaderIndex)
+{
+    currentShader = shaderIndex;
+    createShaders();
     updateGL();
 }
 
@@ -485,28 +506,11 @@ void GLWidget::keyPressEvent(QKeyEvent *event)
 {
     switch(event ->key())
     {
-    case Qt:: Key_0:
-        currentShader = 0;
-        createShaders();
-        updateGL();
-        break;
-    case Qt:: Key_1:
-        currentShader = 1;
-        createShaders();
-        updateGL();
-        break;
-    case Qt:: Key_2:
-        currentShader = 2;
-        createShaders();
-        updateGL();
-        break;
-    case Qt:: Key_3:
-        currentShader = 3;
-        createShaders ();
-        updateGL();
-        break;
-    case Qt:: Key_Escape:
-        qApp ->quit ();
+    case Qt:: Key_0: useShader(0); break;
+    case Qt:: Key_1: useShader(1); break;
+    case Qt:: Key_2: useShader(2); break;
+    case Qt:: Key_3: useShader(3); break;
+    case Qt:: Key_Escape: qApp ->quit ();
     }
 }
 
@@ -581,3 +585,14 @@ void GLWidget::showOpenFileDialog()
         updateGL();
     }
 }
+
+void GLWidget::useShader0() { useShader(0); }
+void GLWidget::useShader1() { useShader(1); }
+void GLWidget::useShader2() { useShader(2); }
+void GLWidget::useShader3() { useShader(3); }
+
+void GLWidget::useTexture0() { useTexture(0); }
+void GLWidget::useTexture1() { useTexture(1); }
+void GLWidget::useTexture2() { useTexture(2); }
+void GLWidget::useTexture3() { useTexture(3); }
+void GLWidget::useTexture4() { useTexture(4); }
