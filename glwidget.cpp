@@ -257,9 +257,9 @@ void GLWidget::genTexCoordsCylinder()
     {
         QVector2D pos = vertices[i].toVector2D();
         max.setX(qMax(max.x(), pos.x()));
-        max.setX(qMax(max.y(), pos.y()));
-        min.setX(qMax(min.x(), pos.x()));
-        min.setX(qMax(min.y(), pos.y()));
+        max.setY(qMax(max.y(), pos.y()));
+        min.setX(qMin(min.x(), pos.x()));
+        min.setY(qMin(min.y(), pos.y()));
     }
 
     QVector2D size = max - min;
