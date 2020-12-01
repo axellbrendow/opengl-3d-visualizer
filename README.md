@@ -2,7 +2,7 @@
 
 This project uses Qt and OpenGL to create a program that renders uncolored .off objects with triangular faces and textures.
 
-<img src="./socket.jpeg"/>
+<img src="./examples/socket.jpeg"/>
 
 # How to compile and execute
 
@@ -110,6 +110,10 @@ private:
      * @brief Flag that indicates if the GLWidget background is black or not
      */
     bool bgBlack;
+    /**
+     * @brief Number that indicates which texture the user wants to apply
+     */
+    int textureIndex;
     /**
      * @brief Number of vertices of the .off object
      */
@@ -238,6 +242,16 @@ private:
     QTimer timer;
 
     /**
+     * @brief Change current shader.
+     * @param shaderIndex
+     */
+    void useShader(int shaderIndex);
+    /**
+     * @brief Change current texture.
+     * @param textureIndex
+     */
+    void useTexture(int textureIndex);
+    /**
      * @brief Read uncolored .off objects with triangular faces.
      * 
      * @param fileName .off filename.
@@ -282,6 +296,15 @@ signals:
 public slots:
     void toggleBackgroundColor();
     void showOpenFileDialog();
+    void useShader0();
+    void useShader1();
+    void useShader2();
+    void useShader3();
+    void useTexture0();
+    void useTexture1();
+    void useTexture2();
+    void useTexture3();
+    void useTexture4();
     void animate();
 };
 ```
@@ -290,18 +313,34 @@ public slots:
 
 https://www.loom.com/share/b7cdca4ae2854b11acb925eec2ceb501
 
-## Socket Gouraud Shader
+## Apple + Phong + Illuminati Texture Shader
 
-<img src="./socket.jpeg" alt="Socket model"/>
+<img src="./examples/apple-illuminati.png" alt="Apple phong wood texture shader"/>
 
-## Cube Gouraud Shader
+## Socket + Gouraud Shader
 
-<img src="./cube-gouraud.png" alt="Cube with Gouraud shader"/>
+<img src="./examples/socket.jpeg" alt="Socket gouraud shader"/>
 
-## Cube Phong Shader
+## Socket + Phong + Wood Texture Shader
 
-<img src="./cube-phong.png" alt="Cube with Phong shader"/>
+<img src="./examples/socket-wood.png" alt="Socket phong wood texture shader"/>
 
-## Mushroom Gouraud Shader
+## Cube + Gouraud Shader
 
-<img src="./mushroom-gouraud.png" alt="Mushroom with Gouraud shader"/>
+<img src="./examples/cube-gouraud.png" alt="Cube Gouraud shader"/>
+
+## Cube + Phong Shader
+
+<img src="./examples/cube-phong.png" alt="Cube Phong shader"/>
+
+## Cube + Phong + Rocks Texture Shader
+
+<img src="./examples/cube-rocks.png" alt="Cube phong rocks texture shader"/>
+
+## Mushroom + Gouraud Shader
+
+<img src="./examples/mushroom-gouraud.png" alt="Mushroom Gouraud shader"/>
+
+## Mushroom + Phong + Bricks Diffuse Texture Shader
+
+<img src="./examples/mushroom-bricks-diffuse.png" alt="Mushroom phong bricks diffuse texture shader"/>
