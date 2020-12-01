@@ -111,10 +111,6 @@ private:
      */
     bool bgBlack;
     /**
-     * @brief Number that indicates which texture the user wants to apply
-     */
-    int textureIndex;
-    /**
      * @brief Number of vertices of the .off object
      */
     unsigned int numVertices;
