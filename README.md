@@ -6,7 +6,15 @@ This project uses Qt and OpenGL to create a program that renders uncolored .off 
 
 # How to compile and execute
 
-Softwares used in this project:
+### Softwares used in this project on Windows:
+
+- Qt Creator 4.13.3
+- Qt 5.15.2
+- MinGW 8.1.0 64-bit
+- CMake 3.19.0 64-bit
+- QMake 3.1
+
+### Softwares used in this project on Linux:
 
 - Qt Creator 4.13.3
 - Qt 5.15.2
@@ -20,7 +28,7 @@ Just use Qt Creator to open `openglvisualization.pro`
 
 ## Second way:
 
-Compiling and running on Linux:
+### Compiling and running on Linux:
 ```
 qmake openglvisualization.pro
 make
@@ -30,8 +38,6 @@ make
 Maybe you can find qmake on Linux through this command `sudo find / -name "qmake" -type f`
 
 In my case, qmake is at `$HOME/Qt/5.15.2/gcc_64/bin/qmake`
-
-You will use the same commands on Windows. To find qmake on Windows, go to your Qt installation folder and run `dir /s qmake.exe` or `dir /s qmake` for CMD or `ls -r qmake` or `ls -r qmake.exe` for PowerShell.
 
 # Implementation
 
