@@ -14,6 +14,8 @@ This project uses Qt and OpenGL to create a program that renders uncolored .off 
 - CMake 3.19.0 64-bit
 - QMake 3.1
 
+Link to our Windows installer: https://drive.google.com/file/d/1VtVoWeODSephYYqxsnjTuuzqeWPhHpIB/view?usp=sharing
+
 ### Softwares used in this project on Linux:
 
 - Qt Creator 4.13.3
