@@ -4,9 +4,9 @@ This project uses Qt and OpenGL to create a program that renders uncolored .off 
 
 <img src="./examples/socket.jpeg"/>
 
-# How to compile and execute
+# Softwares used in this project:
 
-### Softwares used in this project on Windows:
+## Windows:
 
 - Qt Creator 4.13.3
 - Qt 5.15.2
@@ -16,13 +16,15 @@ This project uses Qt and OpenGL to create a program that renders uncolored .off 
 
 Link to our Windows installer: https://drive.google.com/file/d/1VtVoWeODSephYYqxsnjTuuzqeWPhHpIB/view?usp=sharing
 
-### Softwares used in this project on Linux:
+## Linux:
 
 - Qt Creator 4.13.3
 - Qt 5.15.2
 - GCC 5.3.1 20160406 (Red Hat 5.3.1-6) 64 bit
 - CMake 3.19.0
 - QMake 3.1
+
+# How to compile and execute
 
 ## First way:
 
