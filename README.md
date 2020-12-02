@@ -350,3 +350,11 @@ https://www.loom.com/share/95af7829a17a4d63a6bfe318401c742e
 ## Mushroom + Phong + Bricks Diffuse Texture Shader
 
 <img src="./examples/mushroom-bricks-diffuse.png" alt="Mushroom phong bricks diffuse texture shader"/>
+
+# References
+
+- [Model View Projection Matrices](https://www.youtube.com/watch?v=-tonZsbHty8&t=5s&ab_channel=JamieKing)
+- [Perspective Projection Matrix and Depth](https://www.youtube.com/watch?v=svKVqROlVSg&ab_channel=JamieKing)
+- [OpenGL - lighting with the Phong reflection model (part 1 of 2)](https://www.youtube.com/watch?v=lH61rdpJ5v8&ab_channel=BrianWill)
+- [OpenGL - lighting with the Phong reflection model (part 2 of 2)](https://www.youtube.com/watch?v=KdDdljGtfeg&ab_channel=BrianWill)
+- [Tutorial 16 - Texture Mapping in OpenGL](https://www.youtube.com/watch?v=Eh0HeTCCgnE&ab_channel=JeffreyChastine)
